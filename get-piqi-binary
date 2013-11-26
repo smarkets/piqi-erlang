@@ -15,14 +15,16 @@ cd priv/piqi-binary
 git checkout v0.6.5
 cd -
 
+
+
 # check if the PIQI environment variable is defined; when defined it points to
 # the "piqi" binary executable
-if [ -n "$PIQI" ]
-then
-	mkdir -p priv/piqi-binary/"`uname -s`-`uname -m`"
-	cp -a "$PIQI" priv/piqi-binary/"`uname -s`-`uname -m`"/piqi
-else
-	cp -a "$REBAR_DEPS_DIR/piqi_binary/" priv/piqi-binary
-	rm -rf priv/piqi-binary/.git
-fi
+#if [ -n "$PIQI" ]
+#then
+#	mkdir -p priv/piqi-binary/"`uname -s`-`uname -m`"
+#	cp -a "$PIQI" priv/piqi-binary/"`uname -s`-`uname -m`"/piqi
+#else
+#	cp -a "$REBAR_DEPS_DIR/piqi_binary/" priv/piqi-binary
+#	rm -rf priv/piqi-binary/.git
+#fi
 
