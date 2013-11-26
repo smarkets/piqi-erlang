@@ -10,6 +10,11 @@ set -e
 # cleanup previously created directory
 rm -rf priv/piqi-binary
 
+git clone git@git.corp.smarkets.com:smarkets/piqi-binary.git priv/piqi-binary
+cd priv/piqi-binary
+git checkout v0.6.5
+cd -
+
 # check if the PIQI environment variable is defined; when defined it points to
 # the "piqi" binary executable
 if [ -n "$PIQI" ]
