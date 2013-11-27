@@ -16,6 +16,13 @@ git checkout v0.6.5
 cd -
 
 DIR="`uname -s`-`uname -m`"
+
+# terrible!
+if [ "`hostname`" = "ci" ]
+then
+        DIR="Linux-i686"
+fi
+
 ln -sfn -t priv/piqi-binary $DIR/piqi
 
 
