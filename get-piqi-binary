@@ -15,6 +15,8 @@ cd priv/piqi-binary
 git checkout v0.6.5
 cd -
 
+DIR="`uname -s`-`uname -m`"
+ln -sfn -t priv/piqi-binary $DIR/piqi
 
 
 # check if the PIQI environment variable is defined; when defined it points to
