@@ -18,10 +18,12 @@ cd -
 DIR="`uname -s`-`uname -m`"
 
 # terrible!
-if [ "`hostname`" = "ci" ]
-then
+case "`hostname`" in
+    ci|be-test)
         DIR="Linux-i686"
-fi
+        ;;
+esac
+
 
 ln -sfn -t priv/piqi-binary $DIR/piqi
 
