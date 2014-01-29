@@ -19,7 +19,7 @@ DIR="`uname -s`-`uname -m`"
 
 # terrible!
 case "`hostname`" in
-    ci|be-test)
+    ci)
         DIR="Linux-i686"
         ;;
 esac
