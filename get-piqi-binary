@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# this is a rebar get-deps post-hook that copies pre-built piqi binaries
+# this is a rebar compile pre-hook that copies pre-built piqi binaries
 # downloaded by "rebar get-deps" under ./priv or takes the piqi binary pointed
 # to by $PIQI
 
