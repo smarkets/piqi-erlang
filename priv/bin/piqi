@@ -1,6 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
-PIQI=`ERL_CRASH_DUMP="" erl -noshell -kernel error_logger silent -eval 'io:format("~s", [piqi:find_piqi()]), halt().'`
+VERSION="`uname -s`-`uname -m`"
+BIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PRIV_DIR=$(readlink -f "$BIN_DIR/..")
+
+PIQI=$PRIV_DIR/piqi-binary/$VERSION/piqi
 
 "$PIQI" $@
 
