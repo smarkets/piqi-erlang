@@ -60,7 +60,7 @@ get_piqi_servers() ->
 do_pick_piqi_server(PidsTuple) ->
     Size = tuple_size(PidsTuple),
     true = Size > 0,
-    Index0 = erlang:phash2({self(), now()}, Size),
+    Index0 = erlang:phash2({self(), timestamp()}, Size),
     _Pid = element(Index0 + 1, PidsTuple).
 
 
@@ -81,3 +81,10 @@ piqi_server_spec(N) ->
         permanent, 1000, worker,
         [piqi_tools]
     }.
+
+%% http://erlang.org/doc/apps/erts/time_correction.html
+-ifdef(timestamp_correction).
+timestamp() -> erlang:timestamp().
+-else.
+timestamp() -> erlang:now().
+-endif.
